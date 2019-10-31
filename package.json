@@ -1,0 +1,37 @@
+{
+  "name": "@qest/error-utils",
+  "version": "0.0.1",
+  "description": "-",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "cross-env TS_NODE_PROJECT=\"tsconfig.test.json\" mocha --opts test/mocha.opts",
+    "test:cover": "nyc --check-coverage mocha --opts test/mocha.opts",
+    "prettier:run": "prettier --write \"src/**/*.ts\"",
+    "prettier:check": "prettier -l \"src/**/*.ts\"",
+    "tslint:run": "tslint --fix -c tslint.json -p .",
+    "tslint": "tslint -c tslint.json -p .",
+    "build": "rimraf dist && tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qest-cz/error-utils.git"
+  },
+  "author": "QEST",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/qest-cz/error-utils/issues"
+  },
+  "homepage": "https://github.com/qest-cz/error-utils#readme",
+  "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "rimraf": "^3.0.0"
+  },
+  "dependencies": {
+    "http-codes": "^1.0.0"
+  }
+}
