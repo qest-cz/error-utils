@@ -34,8 +34,15 @@ export abstract class HttpError extends BaseError<string> {
 
         const descriptor = this.getDescriptor();
         this.code = descriptor.code;
-        this.message = message || err.message || descriptor.message;
-        this.type = type || (<BaseError<any>>err).type || descriptor.type;
+
+        // 💅 @TODO: Use lodash / rambda deep access helper functions
+        const errMessage = err ? err.message : null;
+        const descriptorMessage = descriptor ? descriptor.message : null;
+        const errType = err ? (<BaseError<any>>err).type : null;
+        const descriptorType = descriptor ? descriptor.type : null;
+
+        this.message = message || errMessage || descriptorMessage;
+        this.type = type || errType || descriptorType;
     }
 
     protected abstract getDescriptor(): IErrorDesriptor<string>;
