@@ -36,6 +36,7 @@
     "typescript": "^3.6.4"
   },
   "dependencies": {
-    "http-codes": "^1.0.0"
+    "http-codes": "^1.0.0",
+    "util": "^0.12.1"
   }
 }
