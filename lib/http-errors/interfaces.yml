@@ -1,0 +1,114 @@
+definitions:
+  HttpError:
+    type: object
+    properties:
+      type:
+        type: string
+        example: error_type
+      message:
+        type: string
+        example: Error description.
+    required:
+      - type
+      - message
+
+responses:
+    BadRequestError:
+      description: 'Request not processed - bad_request'
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    UnauthorizedError:
+      description: 'Authorization process fail - unauthorized'
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    ForbiddenError:
+      description: 'Permission denied - forbidden'
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    NotFoundError:
+      description: 'Resource not found - not_found'
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    MethodNotAllowedError:
+      description: 'Method Not Allowed - method_not_allowed'
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    NotAcceptableError:
+      description: "Request isn't acceptable - not_acceptable"
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    RequestTimeoutError:
+      description: 'Request timeouted - request_timeout'
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    ConflictError:
+      description: 'Data conflict - conflict'
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    GoneError:
+      description: "Resource isn't available - gone"
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    LengthRequiredError:
+      description: 'Request length header is required - length_required'
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    PreconditionFailedError:
+      description: 'Request precondition failed - precondition_failed'
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    RequestEntityTooLargeError:
+      description: 'Request entity is too large - request_entity_too_large'
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    UnsupportedMediaTypeError:
+      description: 'Media type is not supported - unsupported_media_type'
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    UnprocessableEntityError:
+      description: "Validation isn't pass - unprocessable_entity"
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    LockedError:
+      description: 'Resource is locked - locked'
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    FailedDependencyError:
+      description: 'Request depependency failed - failed_dependency'
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    PreconditionRequiredError:
+      description: 'Request need precondition - precondition_required'
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    InternalServerError:
+      description: 'Internal server error - internal_server_error'
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    NotImplementedError:
+      description: 'Feature was not implemented - not_implemented'
+      schema:
+        $ref: '#/definitions/HttpError'
+
+    ServiceUnavailableError:
+      description: 'Service is temporarily unavailable - service_unavailable'
+      schema:
+        $ref: '#/definitions/HttpError'
