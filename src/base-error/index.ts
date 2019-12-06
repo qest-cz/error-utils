@@ -6,7 +6,7 @@ export interface IBaseErrorDescription<E> {
     previousError?: Error;
 }
 
-export abstract class BaseError<E> extends Error {
+export abstract class BaseError<E = string> extends Error {
     name: string;
     payload: any;
     type: E;

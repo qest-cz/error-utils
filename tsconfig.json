@@ -1,23 +1,23 @@
 {
-    "compilerOptions": {
-      "target": "es6",
-      "module": "commonjs",
-      "outDir": "dist",
-      "sourceMap": true,
-      "removeComments": true,
-      "declaration": true,
-      "moduleResolution": "node",
-      "typeRoots": [
-        "node_modules/@types"
-      ],
-      "noUnusedLocals": true,
-      "resolveJsonModule": true
-    },
-    "include": [
-      "./lib/**/*.ts"
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "dist",
+    "sourceMap": true,
+    "removeComments": true,
+    "declaration": true,
+    "moduleResolution": "node",
+    "typeRoots": [
+      "node_modules/@types"
     ],
-    "exclude": [
-      "./node_modules",
-      "dist"
-    ]
-  }
+    "noUnusedLocals": true,
+    "resolveJsonModule": true
+  },
+  "include": [
+    "./src/**/*.ts"
+  ],
+  "exclude": [
+    "./node_modules",
+    "dist"
+  ]
+}
