@@ -6,6 +6,7 @@ export interface IHttpError extends Error {
     code: number;
     type: string;
     payload: any;
+    isHttp: true;
 }
 
 interface IHttpErrorDescription<E> {
@@ -21,9 +22,10 @@ interface IErrorDesriptor<E> {
     code: number;
 }
 
-export abstract class HttpError extends BaseError<string> {
+export abstract class HttpError extends BaseError<string> implements IHttpError {
     public message: string;
     public code: number;
+    public isHttp: true;
 
     constructor(errorDescription?: IHttpErrorDescription<string>) {
         const errorMessage = errorDescription || { message: null, payload: null, type: null, err: null };
@@ -35,7 +37,6 @@ export abstract class HttpError extends BaseError<string> {
         const descriptor = this.getDescriptor();
         this.code = descriptor.code;
 
-        // 💅 @TODO: Use lodash / rambda deep access helper functions
         const errMessage = err ? err.message : null;
         const descriptorMessage = descriptor ? descriptor.message : null;
         const errType = err ? (<BaseError<any>>err).type : null;
@@ -43,6 +44,7 @@ export abstract class HttpError extends BaseError<string> {
 
         this.message = message || errMessage || descriptorMessage;
         this.type = type || errType || descriptorType;
+        this.isHttp = true;
     }
 
     protected abstract getDescriptor(): IErrorDesriptor<string>;

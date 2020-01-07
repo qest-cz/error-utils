@@ -1,6 +1,5 @@
 --recursive
 --require ts-node/register
-test/setup.ts
-lib/**/**test.ts
+src/**/**test.ts
 --exit
 --timeout 15000

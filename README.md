@@ -76,6 +76,8 @@ All base error accept `IBaseErrorDescription` object, which has these paramether
 This is special errors definiton for expres, etc...
 We use this errors to handle error in express middleware from [@qest/express-utils](https://www.npmjs.com/package/@qest/express-utils) package, but it can be used anywhere.
 
+This errors has property `isHttp: true` for better recognizing of error type.
+
 They is descendants of BaseError and have defaults for properties, so you don't have to define type etc.
 ```typescript
 import {NotFoundError} from "@qest/error-utils"; 
